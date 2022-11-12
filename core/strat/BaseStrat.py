@@ -5,12 +5,11 @@ from ..indicator.BaseIndicator import BaseIndicator
 import abc
 
 class BaseStrat(metaclass=abc.ABCMeta):
-    __indicators:List[BaseIndicator] = []
-    __exchange:BaseExchange = None
-    __wallet:Wallet = None
+    __indicators:List[BaseIndicator]
+    __exchange:BaseExchange
+    __wallet:Wallet
 
-    def __init__(self, indicators:List[BaseIndicator], exchange:BaseExchange, wallet:Wallet) -> None:
-        self.__indicators = indicators
+    def __init__(self, exchange:BaseExchange, wallet:Wallet) -> None:
         self.__exchange = exchange
         self.__wallet = wallet
 
@@ -22,3 +21,9 @@ class BaseStrat(metaclass=abc.ABCMeta):
 
     def getWallet(self) -> Wallet:
         return self.__wallet
+
+    def addIndicator(self, indicator:BaseIndicator) -> None:
+        self.__indicators.append(indicator)
+
+    def run(self) -> None:
+        pass

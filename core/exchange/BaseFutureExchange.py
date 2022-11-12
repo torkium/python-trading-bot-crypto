@@ -1,5 +1,6 @@
 import abc
+from .BaseExchange import BaseExchange
 
-class BaseFutureExchange(metaclass=abc.ABCMeta):
+class BaseFutureExchange(BaseExchange, metaclass=abc.ABCMeta):
     # TODO: implements BaseFutureExchange methods
     pass

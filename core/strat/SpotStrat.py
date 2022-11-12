@@ -8,8 +8,8 @@ from ..order.SpotOrder import SpotOrder
 class SpotStrat(BaseStrat):
     __orders:List[SpotOrder]
 
-    def __init__(self, indicators: List[BaseIndicator], exchange: BaseExchange, wallet: Wallet, orders:List[SpotOrder]) -> None:
-        super().__init__(indicators, exchange, wallet)
+    def __init__(self, exchange: BaseExchange, wallet: Wallet, orders:List[SpotOrder] = []) -> None:
+        super().__init__(exchange, wallet)
         self.__orders = orders
 
     def getOrders(self) -> List[SpotOrder]:

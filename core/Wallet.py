@@ -1,4 +1,4 @@
-from Pair import Pair
+from .Pair import Pair
 from decimal import Decimal
 class Wallet:
     __pair:Pair

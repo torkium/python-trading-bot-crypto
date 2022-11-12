@@ -1,5 +1,7 @@
 import abc
+from ..Candle import Candle
 
 class BaseExchange(metaclass=abc.ABCMeta):
-    # TODO: implements BaseExchange methods
-    pass
+    
+    async def waitNewCandle(self) -> Candle:
+        pass
